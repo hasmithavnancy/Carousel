@@ -1,5 +1,5 @@
 # Ex05 Image Carousel
-## Date:
+## Date: 29-09-2025
 
 ## AIM
 To create a Image Carousel using React 
@@ -39,10 +39,109 @@ Use setInterval to call the nextImage() function at regular intervals.
 Clean up the interval when the component unmounts using clearInterval to prevent memory leaks.
 
 ## PROGRAM
+App.jsx
+~~~
+import React, { useState } from 'react';
+import './App.css';
 
+const images = [
+  '/a1.jpg', '/a2.jpeg'
+];
 
+function App() {
+  const [index, setIndex] = useState(0);
+
+  const showPrevious = () => {
+    setIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  };
+
+  const showNext = () => {
+    setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  return (
+    <div className="app">
+      <h1 className="title">Image Carousel</h1>
+      <div className="carousel">
+        <img src={images[index]} alt="image" className="carousel-image" />
+      </div>
+      <div className="buttons">
+        <button onClick={showPrevious}>Previous</button>
+        <button onClick={showNext}>Next</button>
+      </div>
+      <footer className="footer">HASMITHA V NANCY 212224040111</footer>
+    </div>
+  );
+}
+
+export default App;
+
+~~~
+App.css
+~~~
+.app {
+  text-align: center;
+  margin-top: 40px;
+  background-color: #f0f4f8;  /* light background color */
+  width: 600px;               /* set fixed width */
+  height: 600px;              /* set fixed height */
+  margin-left: auto;          /* center horizontally */
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: rgb(52, 101, 109);
+}
+
+.carousel {
+  width: 500px;
+  height: auto;
+  margin: 0 auto; /* centers the carousel horizontally */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #aaa;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* centers the image if needed */
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* New footer style */
+.footer {
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #555;
+  font-style: italic;
+}
+
+~~~
 ## OUTPUT
 
+<img width="1919" height="1129" alt="image" src="https://github.com/user-attachments/assets/75cd5a32-d550-49ba-94c4-cab0c1b7dc7f" />
+
+<img width="1919" height="1099" alt="image" src="https://github.com/user-attachments/assets/600612fc-10d7-4e2a-aea6-d36e4e520fda" />
 
 ## RESULT
 The program for creating Image Carousel using React is executed successfully.
