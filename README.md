@@ -139,9 +139,9 @@ button {
 ~~~
 ## OUTPUT
 
-<img width="1919" height="1129" alt="image" src="https://github.com/user-attachments/assets/75cd5a32-d550-49ba-94c4-cab0c1b7dc7f" />
-
 <img width="1919" height="1099" alt="image" src="https://github.com/user-attachments/assets/600612fc-10d7-4e2a-aea6-d36e4e520fda" />
+
+<img width="1919" height="1129" alt="image" src="https://github.com/user-attachments/assets/d6c62082-3360-4a61-905d-5591373d542f" />
 
 ## RESULT
 The program for creating Image Carousel using React is executed successfully.
